@@ -52,7 +52,7 @@ public class SearchTarget {
             return mid;
         }
 
-
+        //二分查找，只是判断条件做修改
         if (nums[mid] < nums[height]) { //因为是升序数组旋转，所以从mid -- height 一定是有序
             if (nums[mid] < target && target < nums[height]) { //判断target是否在有序数组里
                 return searchTarget(nums, mid + 1, height, target);
