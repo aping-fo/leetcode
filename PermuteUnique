@@ -35,8 +35,8 @@ public class Permute {
         }
 
         for (int i = first; i <= end; i++) {
-            if (i != first && nums[first] == nums[i]) continue;
-            swap(nums, i, first);
+            if (i != first && nums[first] == nums[i]) continue; 如果不同位置的地方，进行交换，其实还是原来那个，所以过滤
+            swap(nums, i, first); 
             permutation(result, nums, first + 1, end);  //固定好当前一位，继续排列后面的
             swap(nums, i, first);
         }
