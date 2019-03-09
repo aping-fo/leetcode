@@ -1,0 +1,52 @@
+package com.ap;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Permute {
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,1,1};
+        System.out.println(permuteUnique(nums));
+    }
+
+    static Set<String> set = new HashSet<>();
+
+    public static List<List<Integer>> permuteUnique(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        permutation(result, nums, 0, nums.length - 1);//输出str[0..2]的所有排列方式
+        return result;
+    }
+
+    public static void permutation(List<List<Integer>> result, int[] nums, int first, int end) {
+        //输出str[first..end]的所有排列方式
+        if (first == end) {    //输出一个排列方式
+            List<Integer> list = new ArrayList<>();
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j <= end; j++) {
+                list.add(nums[j]);
+                sb.append(nums[j]);
+            }
+            if (!set.contains(sb.toString())) {
+                //set.add(sb.toString());
+                result.add(list);
+            }
+        }
+
+        for (int i = first; i <= end; i++) {
+            if (i != first && nums[first] == nums[i]) continue;
+            swap(nums, i, first);
+            permutation(result, nums, first + 1, end);  //固定好当前一位，继续排列后面的
+            swap(nums, i, first);
+        }
+    }
+
+    private static void swap(int[] str, int i, int first) {
+        if (str[i] == str[first]) return;
+        int tmp;
+        tmp = str[first];
+        str[first] = str[i];
+        str[i] = tmp;
+    }
+}
