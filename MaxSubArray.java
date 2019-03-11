@@ -28,6 +28,14 @@ public class MaxSubArray {
         int all = nums[0];
 
         for (int i = 1; i < len; i++) {
+            /**
+             s表示最近连续元素和
+             all表示最大值
+
+             如果s+当前元素 大于s，则s = s + num[i] 连续和继续推进，并和最优解比较
+             如果s + 当前元素小于s 则 s = num[i],重新开始计算，并和最优解比较
+
+             * */
             s = Math.max(nums[i], nums[i] + s);
             all = Math.max(s, all);
         }
