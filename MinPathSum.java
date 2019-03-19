@@ -1,4 +1,7 @@
 package com.ap;
+
+import sun.security.provider.Sun;
+
 /*
 给定一个包含非负整数的 m x n 网格，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。
 
@@ -23,9 +26,41 @@ public class MinPathSum {
                 {4, 2, 1}
         };
 
-        System.out.println(minPathSum(nums));
+        dfs(nums, 0, 0, 0);
+        System.out.println(minSum);
     }
 
+    public static int minSum = Integer.MAX_VALUE;
+
+    /**
+     * 深搜
+     * @param grid
+     * @param i
+     * @param j
+     * @param sum
+     */
+    public static void dfs(int[][] grid, int i, int j, int sum) {
+        int l = grid.length;
+        int w = grid[0].length;
+        sum += grid[i][j];
+        if (i == l - 1 && j == w - 1) {
+            minSum = Math.min(minSum, sum);
+        }
+
+        if (j < w - 1) { //往右搜
+            dfs(grid, i, j + 1, sum);
+        }
+
+        if (i < l - 1) { //向下搜
+            dfs(grid, i + 1, j, sum);
+        }
+    }
+
+    /**
+     * 动态规划
+     * @param grid
+     * @return
+     */
     public static int minPathSum(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
