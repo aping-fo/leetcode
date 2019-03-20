@@ -27,27 +27,23 @@ public class PlusOne {
 
 
     public int[] plusOne1(int[] digits) {
-        int[] arr = new int[digits.length + 1];
         int delt = 1;
         for (int i = digits.length - 1; i >= 0; i--) {
             int num = digits[i] + delt;
             delt = num / 10;
-            arr[i + 1] = num % 10;
+            digits[i] = num % 10;
+            if (delt == 0) {
+                break;
+            }
         }
         if (delt != 0) {
-            arr[0] = delt;
+            int[] target = new int[digits.length + 1];
+            System.arraycopy(digits, 0, target, 1, digits.length);
+            target[0] = delt;
+            return target;
+        } else {
+            return digits;
         }
-
-        int l = arr.length;
-        int s = 0;
-        if (arr[0] == 0) {
-            l -= 1;
-            s = 1;
-        }
-
-        int[] target = new int[l];
-        System.arraycopy(arr, s, target, 0, l);
-        return target;
     }
 
     public int[] plusOne(int[] digits) {
