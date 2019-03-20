@@ -21,7 +21,7 @@ import java.util.List;
 
  输入: [4,3,2,1]
  输出: [4,3,2,2]
- 解释: 输入数组表示数字 43211。
+ 解释: 输入数组表示数字 4321。
  */
 public class PlusOne {
 
