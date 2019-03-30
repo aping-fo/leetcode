@@ -29,6 +29,7 @@ public class Subsets {
         System.out.println(subsets(nums));
     }
 
+    //方案一
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> rsp = new ArrayList<>();
         if (nums == null) {
@@ -46,6 +47,7 @@ public class Subsets {
         return rsp;
     }
 
+    //方案2
     public static List<List<Integer>> subsets1(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
