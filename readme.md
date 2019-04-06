@@ -7,3 +7,5 @@
 [5、颜色排序](https://github.com/aping-fo/leetcode/blob/master/SortColors.java)  
 [6、列出所有自序，不重复](https://github.com/aping-fo/leetcode/blob/master/Subsets.java)  
 [7、移除重复数](https://github.com/aping-fo/leetcode/blob/master/RemoveDuplicates1.java)  
+[8、移除链表重复值节点](https://github.com/aping-fo/leetcode/blob/master/ReleteDuplicates.java)  
+
