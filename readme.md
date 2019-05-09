@@ -11,6 +11,9 @@
 [9、链表节点移动](https://github.com/aping-fo/leetcode/blob/master/Partition.java)  
 [10、反转链表](https://github.com/aping-fo/leetcode/blob/master/second/ReverseNode.java)  
 [11、反转指定范围链表](https://github.com/aping-fo/leetcode/blob/master/second/ReverseSubListNode.java)  
+[12、二叉树根到叶子和为sum的路径go](https://github.com/aping-fo/leetcode/blob/master/go/tree/path_sum.go)  
+
+
 
 
 
